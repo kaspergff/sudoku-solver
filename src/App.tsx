@@ -78,7 +78,7 @@ function App() {
                 return (
                   <div
                     key={nrIndex}
-                    className={`w-10 h-10  ${
+                    className={`w-6 h-6 md:w-10 md:h-10  ${
                       check ? "mr-3 ml-1 mt-1 mb-1" : "m-1"
                     } ${checkRow ? "mb-3" : "mb-1"}`}>
                     <input
@@ -94,7 +94,7 @@ function App() {
                       onChange={(e) =>
                         addNumber(Number(e.target.value), rowIndex, nrIndex)
                       }
-                      className={`form-input w-full drop-shadow-sm rounded-md cursor-crosshair  ${
+                      className={`form-input w-full h-full drop-shadow-sm rounded-md cursor-crosshair  ${
                         !isSolvable ? "border-2 border-red-700" : "border-1"
                       } `}></input>
                   </div>
@@ -113,7 +113,7 @@ function App() {
         Sudoku Solver
       </div>
       {Grid()}
-      <div className="flex flex-row gap-6 mx-auto">
+      <div className="flex flex-row gap-6 mx-auto mt-5">
         <button
           onClick={() => solveButton()}
           className=" sm:mt-4 md:mt-10 w-fit px-6 py-2 rounded-xl border-2 border-gray-700 bg-gray-500 text-white">
