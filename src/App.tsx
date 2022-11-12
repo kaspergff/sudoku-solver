@@ -109,17 +109,19 @@ function App() {
 
   return (
     <div className="w-full h-screen bg-white flex flex-col">
-      <div className="mt-14 mb-10 text-xl text-center">Sudoku Solver</div>
+      <div className="mt-5 mb-5 md:mt-14 md:mb-10 text-xl text-center">
+        Sudoku Solver
+      </div>
       {Grid()}
       <div className="flex flex-row gap-6 mx-auto">
         <button
           onClick={() => solveButton()}
-          className=" mt-10 w-fit px-6 py-2 rounded-xl border-2 border-gray-700 bg-gray-500 text-white">
+          className=" sm:mt-4 md:mt-10 w-fit px-6 py-2 rounded-xl border-2 border-gray-700 bg-gray-500 text-white">
           Solve
         </button>
         <button
           onClick={() => clearBoard()}
-          className=" mt-10 w-fit px-6 py-2 rounded-xl border-2 border-gray-700 bg-gray-500 text-white">
+          className=" md:mt-10 w-fit px-6 py-2 rounded-xl border-2 border-gray-700 bg-gray-500 text-white">
           Clear
         </button>
       </div>
