@@ -78,7 +78,7 @@ function App() {
                 return (
                   <div
                     key={nrIndex}
-                    className={`w-6 h-6 md:w-10 md:h-10  ${
+                    className={`text-xs  md:text-base w-7 h-7 md:w-10 md:h-10  ${
                       check ? "mr-3 ml-1 mt-1 mb-1" : "m-1"
                     } ${checkRow ? "mb-3" : "mb-1"}`}>
                     <input
@@ -94,8 +94,8 @@ function App() {
                       onChange={(e) =>
                         addNumber(Number(e.target.value), rowIndex, nrIndex)
                       }
-                      className={`form-input w-full h-full drop-shadow-sm rounded-md cursor-crosshair  ${
-                        !isSolvable ? "border-2 border-red-700" : "border-1"
+                      className={`form-input w-full h-full drop-shadow-sm rounded-md cursor-crosshair p-1 text-center ${
+                        !isSolvable ? "border-2 border-red-700" : "border-1 "
                       } `}></input>
                   </div>
                 );
