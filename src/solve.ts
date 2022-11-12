@@ -4,7 +4,7 @@ var SIZE = ROW_COL_SIZE * ROW_COL_SIZE;
 
 var MIN_HINTS = 1;
 
-function checkRow(puzzle, number, index) {
+function checkRow(puzzle: number[], number: number, index: number) {
   var start = Math.floor(index / ROW_COL_SIZE) * ROW_COL_SIZE;
   for (var i = 0; i < ROW_COL_SIZE; i += 1) {
     if (puzzle[start + i] === number) {
@@ -14,7 +14,7 @@ function checkRow(puzzle, number, index) {
   return true;
 }
 
-function checkCol(puzzle, number, index) {
+function checkCol(puzzle: number[], number: number, index: number) {
   var start = index % ROW_COL_SIZE;
   for (var i = 0; i < ROW_COL_SIZE; i += 1) {
     if (puzzle[start + i * ROW_COL_SIZE] === number) {
@@ -24,7 +24,7 @@ function checkCol(puzzle, number, index) {
   return true;
 }
 
-function check3x3(puzzle, number, index) {
+function check3x3(puzzle: number[], number: number, index: number) {
   var start =
     index -
     ((index % ROW_COL_SIZE) % CHUNK_SIZE) -
@@ -41,7 +41,7 @@ function check3x3(puzzle, number, index) {
   return true;
 }
 
-function check(puzzle, number, index) {
+function check(puzzle: number[], number: number, index: number) {
   return (
     checkRow(puzzle, number, index) &&
     checkCol(puzzle, number, index) &&
@@ -50,7 +50,11 @@ function check(puzzle, number, index) {
 }
 
 var iterations = 0;
-function recursiveSolve(puzzle, index, maxIterations) {
+function recursiveSolve(
+  puzzle: number[],
+  index: number,
+  maxIterations: number
+): any {
   if (maxIterations !== 0 && ++iterations > maxIterations) {
     throw new Error("Max iterations reached. No solution found.");
   }
@@ -71,8 +75,13 @@ function recursiveSolve(puzzle, index, maxIterations) {
   puzzle[index] = 0;
   return false;
 }
-
-function solve(puzzle, options) {
+var opts = {
+  emptyValue: "0",
+  hintCheck: true,
+  outputArray: false,
+  maxIterations: 1 << 20,
+};
+function solve(puzzle: any, options: any): any {
   var opts = {
     emptyValue: "0",
     hintCheck: true,
@@ -125,8 +134,8 @@ function solve(puzzle, options) {
   return opts.outputArray ? puzzle : puzzle.join("");
 }
 
-const solveSudoku = (puzzle) => {
-  var solution = solve(puzzle);
+const solveSudoku = (puzzle: any) => {
+  var solution = solve(puzzle, opts);
   return solution;
 };
 

@@ -1,4 +1,4 @@
-import { solveSudoku } from "../script/solve";
+import { solveSudoku } from "./solve";
 import { useState } from "react";
 
 function App() {
