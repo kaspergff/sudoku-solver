@@ -108,7 +108,7 @@ function App() {
   };
 
   return (
-    <div className="w-full h-screen bg-white flex flex-col">
+    <div className="w-screen h-screen bg-white flex flex-col">
       <div className="mt-5 mb-5 md:mt-14 md:mb-10 text-xl text-center">
         Sudoku Solver
       </div>
